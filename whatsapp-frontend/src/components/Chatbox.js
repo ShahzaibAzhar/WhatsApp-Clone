@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Chatbox.css";
-import "./Chatmsg.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
@@ -9,7 +8,7 @@ import InsertLinkIcon from "@material-ui/icons/InsertLink";
 import MicIcon from "@material-ui/icons/Mic";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import SendIcon from "@material-ui/icons/Send";
-import axios from "./axios";
+import axios from "../axios";
 
 function Chatbox({ messages }) {
   const [input, setInput] = useState("");
@@ -78,7 +77,9 @@ function Chatbox({ messages }) {
               type="text"
             />
             <FiberManualRecordIcon className="online" />
-            <button onClick={sendMessage} type="submit"></button>
+            <button onClick={sendMessage} type="submit">
+              <SendIcon />
+            </button>
           </form>
         </div>
 

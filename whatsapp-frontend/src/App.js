@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Chatbox from "./Chatbox";
-import Sidebar from "./Sidebar";
+import Chatbox from "./components/Chatbox";
+import Sidebar from "./components/Sidebar";
 import Pusher from "pusher-js";
 import axios from "./axios";
 
