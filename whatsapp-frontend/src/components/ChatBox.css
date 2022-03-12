@@ -1,0 +1,138 @@
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  flex: 0.65;
+}
+
+.chatbox__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 44px;
+  border-bottom: 1px solid lightgray;
+}
+
+.chatbox__header__left {
+  display: flex;
+}
+
+.chatbox_header_title {
+  margin-left: 15px;
+}
+
+.chatbox_header_title > a {
+  font-size: 18px;
+}
+
+.chatbox_header_title > p {
+  color: gray;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.chatbox__header__right {
+  margin-top: -6px;
+}
+
+.chatbox__header__right > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.chatbox__body {
+  flex: 1;
+  background-image: url(https://1.bp.blogspot.com/-NBn1uP5QazQ/XOAwczelidI/AAAAAAAAZGE/jROkkIzKjUEhUTHGuHhX-Fd9FA_mimMFwCLcBGAs/s1600/3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.chat__receiver {
+  background-color: aquamarine;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+.chatbox__input {
+  display: flex;
+  align-items: center;
+  background-color: rgb(190, 189, 189);
+  height: 28px;
+  padding: 20px;
+}
+
+.chatbox__input > .MuiSvgIcon-root {
+  color: lightgray;
+  padding: 10px;
+}
+
+.chatbox__input__msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.chatbox__input__msg > form {
+  flex: 1;
+  display: flex;
+}
+
+.chatbox__input__msg > form > input {
+  height: 32px;
+  font-size: 16px;
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
+  outline-width: 0px;
+  width: 90%;
+}
+.chatbox__input__msg__input {
+  margin-top: 10px;
+}
+.online {
+  color: green;
+  margin-right: 5px;
+  font-size: 8px;
+}
+.chat__msg {
+  position: relative;
+  width: fit-content;
+  font-size: 16px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.chat__receiver {
+  margin-left: auto;
+  background-color: #dcf8c6;
+}
+
+.chat__name {
+  font-size: 14px;
+  position: relative;
+  font-weight: 800;
+}
+
+.chat__timestamp {
+  font-size: 11px;
+}
+
+.chat__receiver__timestamp {
+  margin-left: auto;
+}

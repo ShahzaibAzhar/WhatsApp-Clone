@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Chatbox from "./components/Chatbox";
-import Sidebar from "./components/Sidebar";
+import ChatBox from "./components/ChatBox";
+import SideBar from "./components/SideBar";
 import Pusher from "pusher-js";
 import axios from "./axios";
 
@@ -9,8 +9,8 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    axios.get("/messages/sync").then((response) => {
-      console.log(response.data);
+    axios.get("/sync").then((response) => {
+      //console.log(response.data);
       setMessages(response.data);
     });
   }, []);
@@ -22,7 +22,6 @@ function App() {
 
     const channel = pusher.subscribe("messages");
     channel.bind("inserted", (newMessage) => {
-      // alert(JSON.stringify(data));
       setMessages([...messages, newMessage]);
     });
 
@@ -37,8 +36,8 @@ function App() {
   return (
     <div className="app">
       <div className="app__body">
-        <Sidebar />
-        <Chatbox messages={messages} />
+        <SideBar />
+        <ChatBox messages={messages} />
       </div>
     </div>
   );
