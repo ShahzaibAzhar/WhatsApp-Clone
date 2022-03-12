@@ -40,12 +40,12 @@
 
 .chatbox__body {
   flex: 1;
+  height: 100%;
+  padding: 20px;
   background-image: url(https://1.bp.blogspot.com/-NBn1uP5QazQ/XOAwczelidI/AAAAAAAAZGE/jROkkIzKjUEhUTHGuHhX-Fd9FA_mimMFwCLcBGAs/s1600/3.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 20px;
-  height: 100%;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -109,13 +109,13 @@
   font-size: 8px;
 }
 .chat__msg {
-  position: relative;
+  /* position: relative; */
   width: fit-content;
-  font-size: 16px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 20px;
+  padding: 14px;
   margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: white;
 }
 
 .chat__receiver {
@@ -124,15 +124,21 @@
 }
 
 .chat__name {
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .chat__timestamp {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .chat__receiver__timestamp {
   margin-left: auto;
+}
+.chat_body_message {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 500px;
+  word-wrap: break-word;
 }

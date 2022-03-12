@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import ChatBox from "./components/ChatBox";
-import SideBar from "./components/SideBar";
+import ChatBox from "./components/ChatBox/ChatBox";
+import SidePanel from "./components/SidePanel/SidePanel";
 import Pusher from "pusher-js";
 import axios from "./axios";
 
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__body">
-        <SideBar />
+        <SidePanel />
         <ChatBox messages={messages} />
       </div>
     </div>

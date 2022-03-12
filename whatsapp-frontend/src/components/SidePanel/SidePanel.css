@@ -53,9 +53,9 @@
   width: 75%;
 }
 
-.sidebar__chats {
+.side_panel_chats {
   flex: 1;
-  background-color: white;
+  background-color: rgb(0, 168, 132);
   height: 100%;
   overflow: scroll;
 }

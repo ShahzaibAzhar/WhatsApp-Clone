@@ -1,13 +1,14 @@
 import React from "react";
-import "./SideBar.css";
-import SideBarChat from "./SideBarChat";
+import "./SidePanel.css";
+import ChatData from "./chat_data.json";
+import ChatPanel from "../ChatPanel/ChatPanel";
 import ChatIcon from "@material-ui/icons/Chat";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import { Avatar, IconButton } from "@material-ui/core";
 
-function Sidebar() {
+function SidePanel() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -32,12 +33,17 @@ function Sidebar() {
           <input placeholder="Search or Start New Chat" type="text" />
         </div>
       </div>
-      <div className="sidebar__chats">
-        <SideBarChat />
-        <SideBarChat />
+      <div className="side_panel_chats">
+        {ChatData.map((data) => {
+          return (
+            <div>
+              <ChatPanel header={data.header} msg={data.msg} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
 
-export default Sidebar;
+export default SidePanel;

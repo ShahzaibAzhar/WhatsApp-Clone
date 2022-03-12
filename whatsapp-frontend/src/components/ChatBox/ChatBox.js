@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ChatBox.css";
-import axios from "../axios";
+import axios from "../../axios";
 import MicIcon from "@material-ui/icons/Mic";
 import SendIcon from "@material-ui/icons/Send";
 import SearchIcon from "@material-ui/icons/Search";
@@ -51,7 +51,10 @@ function Chatbox({ messages }) {
             className={`chat__msg ${messages.received || "chat__receiver"}`}
           >
             <span className="chat__name">{messages.name}</span>
-            <p>{messages.message}</p>
+            <p className="chat_body_message">
+              {messages.message}
+              {/* <a href="">see more</a> */}
+            </p>
             <span
               className={`chat__timestamp ${
                 messages.received || "chat__receiver__timestamp"
