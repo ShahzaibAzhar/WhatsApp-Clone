@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ChatBox.css";
-import axios from "../../axios";
+import ChatMsg from "../ChatMsg/ChatMsg";
+import axios from "../../../axios";
 import MicIcon from "@material-ui/icons/Mic";
 import SendIcon from "@material-ui/icons/Send";
 import SearchIcon from "@material-ui/icons/Search";
@@ -10,7 +11,7 @@ import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { Avatar, IconButton } from "@material-ui/core";
 
-function Chatbox({ messages }) {
+function ChatBox({ messages }) {
   const [input, setInput] = useState("");
 
   const sendMessage = async (e) => {
@@ -27,15 +28,15 @@ function Chatbox({ messages }) {
   };
   return (
     <div className="chatbox">
-      <div className="chatbox__header">
-        <div className="chatbox__header__left">
+      <div className="chatbox_header">
+        <div className="chatbox_header_left">
           <Avatar src="https://th.bing.com/th/id/OIP.qRBkODrwp2v-BVbyz4qV0wHaHa?pid=ImgDet&rs=1" />
           <div className="chatbox_header_title">
-            <a>Name</a>
+            <a>Family</a>
             <p>Last seen</p>
           </div>
         </div>
-        <div className="chatbox__header__right">
+        <div className="chatbox_header_right">
           <IconButton>
             <SearchIcon />
           </IconButton>
@@ -44,37 +45,27 @@ function Chatbox({ messages }) {
           </IconButton>
         </div>
       </div>
-      <div className="chatbox__body">
+      <div className="chat_box_body">
         {messages.map((messages, index) => (
-          <div
-            key={index}
-            className={`chat__msg ${messages.received || "chat__receiver"}`}
-          >
-            <span className="chat__name">{messages.name}</span>
-            <p className="chat_body_message">
-              {messages.message}
-              {/* <a href="">see more</a> */}
-            </p>
-            <span
-              className={`chat__timestamp ${
-                messages.received || "chat__receiver__timestamp"
-              }`}
-            >
-              {messages.timestamp}
-            </span>
+          <div key={index}>
+            <ChatMsg
+              received={messages.received}
+              name={messages.name}
+              message={messages.message}
+              timestamp={messages.timestamp}
+            />
           </div>
         ))}
       </div>
-      <div className="chatbox__input">
+      <div className="chatbox_input">
         <IconButton>
           <InsertEmoticonIcon className="emoji" />
         </IconButton>
-
         <IconButton>
           <InsertLinkIcon className="link" />
         </IconButton>
 
-        <div className="chatbox__input__msg">
+        <div className="chatbox_form">
           <form>
             <input
               value={input}
@@ -82,7 +73,7 @@ function Chatbox({ messages }) {
               placeholder="Type your message here"
               type="text"
             />
-            <div className="chatbox__input__msg__input">
+            <div className="chatbox_online">
               <FiberManualRecordIcon className="online" />
             </div>
             <IconButton onClick={sendMessage}>
@@ -99,4 +90,4 @@ function Chatbox({ messages }) {
   );
 }
 
-export default Chatbox;
+export default ChatBox;

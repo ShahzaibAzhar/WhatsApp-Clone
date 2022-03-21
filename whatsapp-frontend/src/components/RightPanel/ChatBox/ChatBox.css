@@ -4,19 +4,25 @@
   flex: 0.65;
 }
 
-.chatbox__header {
+.chatbox_header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   height: 44px;
   border-bottom: 1px solid lightgray;
 }
 
-.chatbox__header__left {
+.chatbox_header_left {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .chatbox_header_title {
+  display: flex;
+  flex-direction: column;
   margin-left: 15px;
 }
 
@@ -27,18 +33,15 @@
 .chatbox_header_title > p {
   color: gray;
   font-size: 14px;
+  margin: 0px;
   margin-top: 4px;
 }
 
-.chatbox__header__right {
-  margin-top: -6px;
-}
-
-.chatbox__header__right > .MuiSvgIcon-root {
+.chatbox_header_right > .MuiSvgIcon-root {
   color: gray;
 }
 
-.chatbox__body {
+.chat_box_body {
   flex: 1;
   height: 100%;
   padding: 20px;
@@ -50,10 +53,6 @@
   overflow-x: hidden;
 }
 
-.chat__receiver {
-  background-color: aquamarine;
-}
-
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -62,20 +61,20 @@
   background: #ff0000;
 }
 
-.chatbox__input {
+.chatbox_input {
   display: flex;
   align-items: center;
-  background-color: rgb(190, 189, 189);
   height: 28px;
   padding: 20px;
+  background-color: rgb(190, 189, 189);
 }
 
-.chatbox__input > .MuiSvgIcon-root {
+.chatbox_input > .MuiSvgIcon-root {
   color: lightgray;
   padding: 10px;
 }
 
-.chatbox__input__msg {
+.chatbox_form {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -86,59 +85,23 @@
   background-color: white;
 }
 
-.chatbox__input__msg > form {
+.chatbox_form > form {
   flex: 1;
   display: flex;
 }
 
-.chatbox__input__msg > form > input {
+.chatbox_form > form > input {
   height: 32px;
-  font-size: 16px;
-  border: none;
+  width: 90%;
   margin-left: 10px;
   margin-top: 10px;
+  border: none;
+  font-size: 16px;
   outline-width: 0px;
-  width: 90%;
-}
-.chatbox__input__msg__input {
-  margin-top: 10px;
 }
 .online {
   color: green;
+  font-size: 14px;
+  margin-top: 20px;
   margin-right: 5px;
-  font-size: 8px;
-}
-.chat__msg {
-  /* position: relative; */
-  width: fit-content;
-  padding: 14px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border-radius: 20px;
-  background-color: white;
-}
-
-.chat__receiver {
-  margin-left: auto;
-  background-color: #dcf8c6;
-}
-
-.chat__name {
-  font-size: 16px;
-  position: relative;
-  font-weight: 700;
-}
-
-.chat__timestamp {
-  font-size: 12px;
-}
-
-.chat__receiver__timestamp {
-  margin-left: auto;
-}
-.chat_body_message {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 500px;
-  word-wrap: break-word;
 }

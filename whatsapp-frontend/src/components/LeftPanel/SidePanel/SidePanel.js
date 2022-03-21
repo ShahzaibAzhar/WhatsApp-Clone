@@ -10,12 +10,10 @@ import { Avatar, IconButton } from "@material-ui/core";
 
 function SidePanel() {
   return (
-    <div className="sidebar">
-      <div className="sidebar__header">
-        <div className="sidebar__header__pic">
-          <Avatar src="https://th.bing.com/th/id/OIP.CsCp-2Ng2Ql_lovlnRh4XwHaHa?pid=ImgDet&rs=1" />
-        </div>
-        <div className="sidebar__header__right">
+    <div className="side_panel">
+      <div className="side_panel_top_bar">
+        <Avatar src="https://th.bing.com/th/id/OIP.CsCp-2Ng2Ql_lovlnRh4XwHaHa?pid=ImgDet&rs=1" />
+        <div className="side_panel_top_bar_right">
           <IconButton>
             <DonutLargeIcon />
           </IconButton>
@@ -27,8 +25,8 @@ function SidePanel() {
           </IconButton>
         </div>
       </div>
-      <div className="sidebar__header__searchbar">
-        <div className="sidebar__header__input">
+      <div className="side_panel_search_bar">
+        <div className="side_panel_input">
           <SearchIcon />
           <input placeholder="Search or Start New Chat" type="text" />
         </div>
